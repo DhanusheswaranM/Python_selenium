@@ -46,6 +46,6 @@ def test_pass():
     b="arun"
     assert a.__eq__(b)
 
-@pytest.mark.parametrize("input_tests,expected",[(1,3),(3,6),(5,7)])
+@pytest.mark.parametrize("input_tests,expected",[(1,3),(3,5),(5,7)])
 def test_add(input_tests,expected):
     assert input_tests + 2 == expected

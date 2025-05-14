@@ -1,0 +1,2 @@
+[32mINFO    [0m test_search_for_product:test_search.py:13 The product is entered to search
+[32mINFO    [0m test_search_for_product:test_search.py:18 The product is displayed correctly

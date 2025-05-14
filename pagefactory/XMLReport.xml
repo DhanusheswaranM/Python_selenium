@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="6.540" timestamp="2025-05-14T15:45:15.587806+05:30" hostname="LAPTOP-RG2DJRNT"><testcase classname="Tests.test_search.TestSearch" name="test_search_for_product" time="6.498" /></testsuite></testsuites>

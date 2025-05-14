@@ -1,19 +1,13 @@
 import pytest
 from selenium import webdriver
-import read_config
 from selenium.webdriver.chrome.options import Options
+from PageObjectModel.utilities import read_config
 @pytest.fixture()
 def setup_and_teardown(request):
-    browser = read_config.get_config("basic", "browser")
+    browser = read_config.get_config("basic info", "browser")
     driver = None
     if browser.__eq__("chrome"):
-        chrome_options=Options()
-        chrome_options.add_experimental_option("prefs", {
-            "credentials_enable_service": False,
-            "profile.password_manager_enabled": False
-        })
-        chrome_options.add_argument("--incognito")
-        driver=webdriver.Chrome(options=chrome_options)
+        driver = webdriver.Chrome()
     elif browser.__eq__("firefox"):
         driver = webdriver.Firefox()
     elif browser.__eq__("edge"):
@@ -22,7 +16,7 @@ def setup_and_teardown(request):
         print("the browser not not valid")
     driver.maximize_window()
     driver.implicitly_wait(10)
-    url = read_config.get_config("basic","url")
+    url = read_config.get_config("basic info","url")
     driver.get(url)
 
     request.cls.driver = driver

@@ -1,14 +1,20 @@
 import pytest
 from selenium import webdriver
 import read_config
-
+from selenium.webdriver.chrome.options import Options
 @pytest.fixture()
 def setup_and_teardown(request):
     browser = read_config.get_config("basic", "browser")
     driver = None
     if browser.__eq__("chrome"):
-        driver = webdriver.Chrome()
-    elif browser.__eq__("firefox"):
+        chrome_options=Options()
+        chrome_options.add_experimental_option("prefs", {
+            "credentials_enable_service": False,
+            "profile.password_manager_enabled": False
+        })
+        chrome_options.add_argument("--incognito")
+        driver=webdriver.Chrome(options=chrome_options)
+
         driver = webdriver.Firefox()
     elif browser.__eq__("edge"):
         driver = webdriver.Edge()

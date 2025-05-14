@@ -4,7 +4,7 @@ import read_config
 import time
 import excelReader
 
-data = excelReader.get_data("D:\\Python_selenium\\Task\\ExcelData\\LoginData.xlsx","Sheet1")
+data = excelReader.get_data("D:/Python_selenium/Task/ExcelData/LoginData.xlsx","Sheet1")
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestLogin:
     @pytest.mark.parametrize('username , password',data)

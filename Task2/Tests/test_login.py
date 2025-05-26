@@ -3,7 +3,7 @@ from Task2.Utils import ExcelReader
 from Task2.Utils import read_config
 from Task2.Pages.loginpage import LoginPage
 from Task2.Pages.dashboardPage import DashboardPage
-data = ExcelReader.get_LoginData("../Task2/Utils/LoginDataForOrangeHRM.xlsx","Sheet1")
+data = ExcelReader.get_LoginData("Task2/Utils/LoginDataForOrangeHRM.xlsx","Sheet1")
 @pytest.mark.usefixtures("setup_and_teardown")
 class TestLogin:
     # @pytest.mark.parametrize("username , password",ExcelReader.get_LoginData("D:/Python_selenium/Task2/Utils/LoginDataForOrangeHRM.xlsx","Sheet1"))
